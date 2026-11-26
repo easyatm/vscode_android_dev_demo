@@ -1,0 +1,8 @@
+{
+  "terminal.integrated.env.windows": {
+    "JAVA_HOME": "D:\\ANDROID_DEV\\jdk-17",
+    "ANDROID_HOME": "D:\\ANDROID_DEV\\sdk",
+    "GRADLE_USER_HOME": "D:\\ANDROID_DEV\\gradle-cache",
+    "PATH": "D:\\ANDROID_DEV\\jdk-17\\bin;D:\\ANDROID_DEV\\sdk\\cmdline-tools\\latest\\bin;${env:PATH};D:\\ANDROID_DEV\\sdk\\platform-tools"
+  }
+}

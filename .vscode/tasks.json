@@ -1,0 +1,39 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Android: 构建 Debug APK",
+      "type": "process",
+      "command": "cmd.exe",
+      "args": ["/d", "/c", "gradlew.bat", ":app:assembleDebug", "--console=plain"],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "JAVA_HOME": "D:\\ANDROID_DEV\\jdk-17",
+          "ANDROID_HOME": "D:\\ANDROID_DEV\\sdk",
+          "GRADLE_USER_HOME": "D:\\ANDROID_DEV\\gradle-cache"
+        }
+      },
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "Android: 安装到内网设备",
+      "type": "process",
+      "command": "adb",
+      "args": ["-s", "192.168.7.10:5555", "install", "-r", "${workspaceFolder}\\app\\build\\outputs\\apk\\debug\\app-debug.apk"],
+      "options": { "env": { "PATH": "${env:PATH};D:\\ANDROID_DEV\\sdk\\platform-tools" } },
+      "dependsOn": "Android: 构建 Debug APK",
+      "problemMatcher": []
+    },
+    {
+      "label": "Android: 在内网设备运行 Demo",
+      "type": "process",
+      "command": "adb",
+      "args": ["-s", "192.168.7.10:5555", "shell", "am", "start", "-W", "-n", "com.example.vscodedemo/.MainActivity"],
+      "options": { "env": { "PATH": "${env:PATH};D:\\ANDROID_DEV\\sdk\\platform-tools" } },
+      "dependsOn": "Android: 安装到内网设备",
+      "problemMatcher": []
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Android: 调试内网 Demo",
+      "type": "android",
+      "request": "launch",
+      "preLaunchTask": "Android: 构建 Debug APK",
+      "targetDevice": "192.168.7.10:5555",
+      "adbSocket": "127.0.0.1:5037",
+      "autoStartADB": false,
+      "appSrcRoot": "${workspaceFolder}/app/src/main",
+      "apkFile": "${workspaceFolder}/app/build/outputs/apk/debug/app-debug.apk",
+      "manifestFile": "${workspaceFolder}/app/build/intermediates/merged_manifest/debug/processDebugMainManifest/AndroidManifest.xml"
+    }
+  ]
+}
