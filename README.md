@@ -2,7 +2,29 @@
 
 基于参考模板的 Kotlin、Jetpack Compose 和 Gradle Wrapper 工作流，无需 Android Studio 或模拟器。应用支持 Android 7.0（API 24）及以上，首页显示当前 Android 版本和计数按钮。
 
-本机使用 `D:\ANDROID_DEV\jdk-17`、`D:\ANDROID_DEV\sdk` 和 `D:\ANDROID_DEV\gradle-cache`。构建使用 Gradle 8.7、AGP 8.5.2、Kotlin 1.9.24、Android SDK 34 和 Build Tools 34.0.0。Kotlin 编译器由 Gradle 插件提供。
+## 已安装的开发工具
+
+| 工具 | 版本 | 本机位置 |
+| --- | --- | --- |
+| Eclipse Temurin JDK | 17.0.21.1 | `D:\ANDROID_DEV\jdk-17` |
+| Android SDK Command-line Tools（含 `sdkmanager`） | 22.0 | `D:\ANDROID_DEV\sdk\cmdline-tools\latest` |
+| Android SDK Platform | API 34，修订版 3 | `D:\ANDROID_DEV\sdk\platforms\android-34` |
+| Android SDK Build Tools | 34.0.0 | `D:\ANDROID_DEV\sdk\build-tools\34.0.0` |
+| Android SDK Platform Tools（含 `adb`） | 37.0.3 | `D:\ANDROID_DEV\sdk\platform-tools` |
+| Gradle（由 Wrapper 下载） | 8.7 | `D:\ANDROID_DEV\gradle-cache\wrapper\dists` |
+
+真机部署沿用本机原有的 `D:\Portable_App\adb\adb.exe`。Android Gradle Plugin（AGP 8.5.2）和 Kotlin 插件（1.9.24，含编译器）由 Gradle 自动下载，不需要单独安装 Kotlin 编译器。本次未安装 Android Studio 或模拟器。
+
+## 已安装的 VS Code 扩展
+
+| 扩展 | 扩展 ID | 版本 | 用途 |
+| --- | --- | --- | --- |
+| Android | `adelphes.android-dev-ext` | 1.4.0 | 部署并连接真机调试器，支持源码断点 |
+| Kotlin Language | `mathiasfrohlich.kotlin` | 1.7.1 | 识别 Kotlin 源码和脚本，提供语法高亮 |
+
+Gradle for Java（`vscjava.vscode-gradle`）仅列为工作区推荐，当前未安装；不影响 Gradle Wrapper 构建或真机调试。
+
+## 构建与运行
 
 在 VS Code 中执行任务 `Android: 在内网设备运行 Demo`，会依次构建、安装和启动。也可以在工作区新开的 PowerShell 终端执行：
 
